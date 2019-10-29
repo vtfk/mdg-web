@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "mdg-web",
+  "scope": "telemark",
+  "alias": "mdg.t-fk.win",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ],
+  "build": {
+    "env": {
+      "VUE_APP_MDG_PROD_URL": "https://mdg.t-fk.win"
+    }
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
